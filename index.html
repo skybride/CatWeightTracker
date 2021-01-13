@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kitty Tracker v1.0</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Kitty Tracker</h1>
+        <h2>Weight, Play, Puke</h2>
+        <div id="cardHolder">
+            <div class="card">
+                <h3>Date:</h1>
+                <input type="datetime-local">
+                <table>
+                    <tr>
+                        <th>Kitty</th>
+                        <th>Weight (lbs)</th>
+                        <th>Play</th>
+                        <th>Puke</th>
+                        <th>Confirm</th>
+                    </tr>
+                    <tr>
+                        <td class="nalaColor"><img src="images/nala.jpg" alt="nala"></td>
+                        <td><input type="text" name="weight" id="weight"></td>
+                        <td><input type="checkbox" name="play"></td>
+                        <td><input type="checkbox" name="puke"></td>
+                        <td><button onclick="updateDisplay()" class="display">Add</button></td>
+                    </tr>
+                    <tr>
+                        <td class="kikiColor"><img src="images/kiki.jpg" alt="kiki"></td>
+                        <td><input type="text" name="weight"></td>
+                        <td><input type="checkbox" name="play"></td>
+                        <td><input type="checkbox" name="puke"></td>
+                    </tr>
+                    <tr>
+                        <td class="pekoeColor"><img src="images/pekoe.jpg" alt="pekoe"></td>
+                        <td><input type="text" name="weight"></td>
+                        <td><input type="checkbox" name="play"></td>
+                        <td><input type="checkbox" name="puke"></td>
+                    </tr>       
+                    <tr>
+                        <td class="rogueColor"><img src="images/rogue.jpg" alt="pekoe"></td>
+                        <td><input type="text" name="weight"></td>
+                        <td><input type="checkbox" name="play"></td>
+                        <td><input type="checkbox" name="puke"></td>
+                    </tr>         
+                </table>
+                
+            </div>
+        </div>
+        <hr>
+        <div id="data">
+            <h3>Data</h3>
+            <div id="nalaWeight"></div>
+        </div>
+        <script src="scripts.js"></script>
+    </body>
+</html>
