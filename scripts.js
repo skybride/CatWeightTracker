@@ -6,21 +6,11 @@ updateDisplay = () => {
     const weightPekoe = document.createElement("p");
     const weightRogue = document.createElement("p");
 
-    /*
-    - take userinput and store in variable
-    - clear input element with id nalaWeight
-    */
+    /*take userinput and store in variable*/
     const inputValue = document.getElementById("nalaWeight").value;
-    document.getElementById("nalaWeight").value = "";
-
     const inputValue2 = document.getElementById("kikiWeight").value;
-    document.getElementById("kikiWeight").value = "";
-
     const inputValue3 = document.getElementById("pekoeWeight").value;
-    document.getElementById("pekoeWeight").value = "";
-
     const inputValue4 = document.getElementById("rogueWeight").value;
-    document.getElementById("rogueWeight").value = "";
 
     /*create nodes that will hold the variables above*/
     const weightValueNala = document.createTextNode(inputValue);
@@ -39,8 +29,23 @@ updateDisplay = () => {
     document.getElementById("kikiWeightDisplay").appendChild(weightKiki);
     document.getElementById("pekoeWeightDisplay").appendChild(weightPekoe);
     document.getElementById("rogueWeightDisplay").appendChild(weightRogue);
+    
+    save();
 
+    /*clear input value after saving to local storage*/
+    document.getElementById("nalaWeight").value = "";
+    document.getElementById("nalaWeight").value = "";
+    document.getElementById("nalaWeight").value = "";
+    document.getElementById("nalaWeight").value = "";
 }
 
 /*Store into local storage*/
+save = () => {
+    /*generate a unique key using the current date*/
+    const key = new Date();
+    const value = document.getElementById("nalaWeight").value;
 
+    /*store value*/
+    localStorage.setItem(key, value);
+    
+}
