@@ -25,7 +25,8 @@
                         <td><input type="checkbox" name="play"></td>
                         <td><input type="checkbox" name="puke"></td>
                         <td>
-                            <button onclick="save()" class="display">Add</button>
+                            <button id="nala" onclick="getIdValue(id)" class="display">Add</button>
+                            <!-- <button id="nala" onclick="save()" class="display">Add</button> -->
                         </td>
                     </tr>
                     <tr>
@@ -33,7 +34,10 @@
                         <td><input type="text" name="weight" id="kikiWeight"></td>
                         <td><input type="checkbox" name="play"></td>
                         <td><input type="checkbox" name="puke"></td>
-                        <td><button onclick="save()" class="display">Add</button></td>
+                        <td>
+                            <button id="kiki" onclick="getIdValue(id)" class="display">Add</button>
+                        </td>
+                        <!-- <td><button onclick="save()" class="display">Add</button></td> -->
                     </tr>
                     <tr>
                         <td class="pekoeColor"><img src="images/pekoe.jpg" alt="pekoe"></td>
@@ -50,10 +54,11 @@
                         <td><button onclick="save()" class="display">Add</button></td>
                     </tr>         
                 </table>
-                
+                <!-- <button onclick="displayArea()">Test</button> -->
             </div>
         </div>
         <hr>
+
         <div id="data">
             <h3>Data</h3>
             <hr>
@@ -68,7 +73,6 @@
             <hr>
             <h4>Rogue</h4>
             <div id="rogueWeightDisplay"></div>
-
         </div>
         <script src="scripts.js"></script>
     </body>
