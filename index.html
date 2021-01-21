@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">       
         <title>Kitty Tracker v1.0</title>
-        <link rel="stylesheet" href="styles.css">
+        
     </head>
     <body>
         <h1>Kitty Tracker</h1>
@@ -25,7 +29,7 @@
                         <td><input type="checkbox" name="play"></td>
                         <td><input type="checkbox" name="puke"></td>
                         <td>
-                            <button id="nala" onclick="getIdValue(id)" class="display">Add</button>
+                            <button type="button" id="nala" onclick="getIdValue(id)" class="btn btn-primary">Add</button>
                             <!-- <button id="nala" onclick="save()" class="display">Add</button> -->
                         </td>
                     </tr>
@@ -35,7 +39,7 @@
                         <td><input type="checkbox" name="play"></td>
                         <td><input type="checkbox" name="puke"></td>
                         <td>
-                            <button id="kiki" onclick="getIdValue(id)" class="display">Add</button>
+                            <button type="button" id="kiki" onclick="getIdValue(id)" class="btn btn-primary">Add</button>
                         </td>
                         <!-- <td><button onclick="save()" class="display">Add</button></td> -->
                     </tr>
@@ -44,14 +48,14 @@
                         <td><input type="text" name="kikiWeight" id="pekoeWeight"></td>
                         <td><input type="checkbox" name="play"></td>
                         <td><input type="checkbox" name="puke"></td>
-                        <td><button onclick="save()" class="display">Add</button></td>
+                        <td><button type="button" onclick="save()" class="btn btn-primary">Add</button></td>
                     </tr>       
                     <tr>
                         <td class="rogueColor"><img src="images/rogue.jpg" alt="pekoe"></td>
                         <td><input type="text" name="weight" id="rogueWeight"></td>
                         <td><input type="checkbox" name="play"></td>
                         <td><input type="checkbox" name="puke"></td>
-                        <td><button onclick="save()" class="display">Add</button></td>
+                        <td><button type="button" onclick="save()" class="btn btn-primary">Add</button></td>
                     </tr>         
                 </table>
                 <!-- <button onclick="displayArea()">Test</button> -->
@@ -60,20 +64,77 @@
         <hr>
 
         <div id="data">
-            <h3>Data</h3>
-            <hr>
-            <h4>Nala</h4>
-            <div id="nalaWeightDisplay"></div>
-            <hr>
-            <h4>Kiki</h4>
-            <div id="kikiWeightDisplay"></div>
-            <hr>
-            <h4>Pekoe</h4>
-            <div id="pekoeWeightDisplay"></div>
-            <hr>
-            <h4>Rogue</h4>
-            <div id="rogueWeightDisplay"></div>
+            <div id="accordion">
+                <div class="card">
+                    <div class="header">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <h4>Current Data: </h4>
+                        </button>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <div id="nalaWeightDisplay"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <h4>Nala</h4>
+                        </button>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            <div id="nalaWeightDisplay"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <h4>Kiki</h4>
+                        </button>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            <div id="kikiWeightDisplay"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <h4>Pekoe</h4>
+                        </button>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                        <div class="card-body">
+                            <div id="pekoeWeightDisplay"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <h4>Rogue</h4>
+                        </button>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                        <div class="card-body">
+                            <div id="rougeWeightDisplay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    
         <script src="scripts.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>
